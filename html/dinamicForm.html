@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="../css/dinamicForm.css">
+</head>
+<body>
+    <!-- Main form with corrected ID -->
+    <form id="miForm">
+        <div>
+            <!-- Responsible person field -->
+            <label for="">Responsible</label>
+            <input type="text" name="responsible">
+        </div>
+
+        <div>
+            <!-- Quantity of guests input -->
+            <label for="">Number of guests</label>
+            <input type="number" name="quantity" id="quantity">
+        </div>
+        
+        <!-- Dynamic guest fields will be inserted here -->
+        <div id="divGuests"></div>
+
+        <!-- Submit button -->
+        <button type="submit">Save</button>
+    </form>
+</body>
+
+<!-- Load external JavaScript after the DOM is loaded -->
+<script defer src="../js/dinamicForm.js"></script>
+</html>
