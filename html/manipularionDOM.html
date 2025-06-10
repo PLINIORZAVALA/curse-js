@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete DOM Manipulation Guide</title>
+    <link rel="stylesheet" href="../css/manipularionDOM.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1 id="main-title">Complete DOM Manipulation Guide</h1>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#selectors">Selectors</a></li>
+                <li><a href="#modification">Modification</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#forms">Forms</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section 1: Element Selection -->
+        <section id="selectors" class="section">
+            <h2>Element Selection Methods</h2>
+            <div class="example-box">
+                <p class="select-example" id="select1">getElementById()</p>
+                <p class="select-example">getElementsByClassName()</p>
+                <p class="select-example">getElementsByTagName()</p>
+                <p class="select-example">querySelector()</p>
+                <p class="select-example">querySelectorAll()</p>
+            </div>
+            <button id="showSelectors">Show Selection Code</button>
+        </section>
+
+        <!-- Section 2: DOM Modification -->
+        <section id="modification" class="section">
+            <h2>DOM Modification Techniques</h2>
+            <div class="mod-box">
+                <p id="mod-example">Original Content</p>
+                <div id="parent-element">
+                    <p>Child element 1</p>
+                    <p>Child element 2</p>
+                </div>
+                <div id="dynamic-content"></div>
+            </div>
+            <div class="button-group">
+                <button id="changeText">Change Text</button>
+                <button id="changeHTML">Change HTML</button>
+                <button id="addClass">Add Class</button>
+                <button id="toggleClass">Toggle Class</button>
+                <button id="createElement">Create Element</button>
+                <button id="appendElement">Append Element</button>
+                <button id="removeElement">Remove Element</button>
+                <button id="cloneElement">Clone Element</button>
+            </div>
+        </section>
+
+        <!-- Section 3: Event Handling -->
+        <section id="events" class="section">
+            <h2>Event Handling</h2>
+            <div class="event-box">
+                <div id="click-box" class="interactive-box">Click me</div>
+                <div id="hover-box" class="interactive-box">Hover over me</div>
+                <div id="drag-box" class="interactive-box" draggable="true">Drag me</div>
+                <div id="drop-zone" class="drop-area">Drop here</div>
+                <input type="text" id="key-input" placeholder="Type something">
+            </div>
+            <div id="event-output"></div>
+        </section>
+
+        <!-- Section 4: Form Handling -->
+        <section id="forms" class="section">
+            <h2>Form Manipulation</h2>
+            <form id="user-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <select id="age" name="age">
+                        <option value="">Select age range</option>
+                        <option value="18-25">18-25</option>
+                        <option value="26-35">26-35</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="subscribe" name="subscribe"> Subscribe
+                    </label>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+            <div id="form-output"></div>
+        </section>
+
+        <!-- Section 5: Advanced Techniques -->
+        <section id="advanced" class="section">
+            <h2>Advanced Techniques</h2>
+            <div class="advanced-box">
+                <div id="animation-box" class="box">Animate me</div>
+                <div id="ajax-content">Load content with Fetch API</div>
+                <div id="storage-example">LocalStorage Example</div>
+                <div id="template-example"></div>
+                <template id="user-template">
+                    <div class="user-card">
+                        <h3 class="user-name"></h3>
+                        <p class="user-email"></p>
+                    </div>
+                </template>
+            </div>
+            <div class="button-group">
+                <button id="animateBtn">Animate</button>
+                <button id="loadContentBtn">Load Content</button>
+                <button id="saveDataBtn">Save Data</button>
+                <button id="showDataBtn">Show Data</button>
+                <button id="useTemplateBtn">Use Template</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>DOM Manipulation Reference &copy; 2023</p>
+    </footer>
+
+    <script src="../js/manipularionDOM.js"></script>
+</body>
+</html>
