@@ -15,3 +15,9 @@ eventlistener.hmtl
 eventlistener.js
 eventlistener.css
 link: https://youtu.be/GUTt0qKUDyU?si=PAUVPz_qrpYp4-1y
+
+## Async
+async.html
+async.js
+async.css
+link: https://www.youtube.com/watch?v=frm0CHyeSbE 
