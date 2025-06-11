@@ -1,4 +1,4 @@
-// Objeto JSON de ejemplo
+// Example JSON object
 const userData = {
     id: 1,
     name: "Juan Pérez",
@@ -13,87 +13,87 @@ const userData = {
     }
 };
 
-// Función asíncrona para simular obtención de datos con retardo
+// Async function to simulate data fetching with delay
 async function fetchDataWithDelay() {
-    // Simulamos un retardo de 1 segundo (1000 ms)
+    // Simulate a 1 second delay (1000 ms)
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    // Devolvemos una copia del objeto para simular respuesta de API
+    // Return a copy of the object to simulate API response
     return JSON.parse(JSON.stringify(userData));
 }
 
-// Función asíncrona para simular envío de datos con retardo
+// Async function to simulate data sending with delay
 async function sendDataWithDelay(data) {
-    // Simulamos un retardo de 1 segundo (1000 ms)
+    // Simulate a 1 second delay (1000 ms)
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    // Simulamos una respuesta del servidor
+    // Simulate server response
     return {
         status: "success",
-        message: "Datos recibidos correctamente",
+        message: "Data received successfully",
         receivedData: data,
         timestamp: new Date().toISOString()
     };
 }
 
-// Elementos del DOM
+// DOM elements
 const outputDiv = document.getElementById('output');
 const fetchBtn = document.getElementById('fetchBtn');
 const sendBtn = document.getElementById('sendBtn');
 
-// Evento para obtener datos
+// Event for fetching data
 fetchBtn.addEventListener('click', async () => {
-    outputDiv.textContent = "Obteniendo datos... (1 segundo de retardo)";
-    console.log("Iniciando obtención de datos...");
+    outputDiv.textContent = "Fetching data... (1 second delay)";
+    console.log("Starting data fetch...");
     
     try {
         const data = await fetchDataWithDelay();
         
-        // Mostrar en el DOM
+        // Display in DOM
         outputDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
         
-        // Mostrar en consola
-        console.log("Datos obtenidos:", data);
-        console.log("Tipo de dato recibido:", typeof data);
-        console.log("Nombre del usuario:", data.name);
+        // Display in console
+        console.log("Data received:", data);
+        console.log("Received data type:", typeof data);
+        console.log("User name:", data.name);
         console.log("Roles:", data.roles.join(", "));
         
     } catch (error) {
-        outputDiv.textContent = "Error al obtener datos: " + error.message;
-        console.error("Error al obtener datos:", error);
+        outputDiv.textContent = "Error fetching data: " + error.message;
+        console.error("Error fetching data:", error);
     }
 });
 
-// Evento para enviar datos
+// Event for sending data
 sendBtn.addEventListener('click', async () => {
-    // Modificamos ligeramente los datos antes de enviar
+    // Slightly modify the data before sending
     const dataToSend = {
         ...userData,
-        name: "MODIFICADO: " + userData.name,
+        name: "MODIFIED: " + userData.name,
         timestamp: new Date().toISOString()
     };
     
-    outputDiv.textContent = "Enviando datos... (1 segundo de retardo)";
-    console.log("Iniciando envío de datos:", dataToSend);
+    outputDiv.textContent = "Sending data... (1 second delay)";
+    console.log("Starting data send:", dataToSend);
     
     try {
         const response = await sendDataWithDelay(dataToSend);
         
-        // Mostrar en el DOM
+        // Display in DOM
         outputDiv.innerHTML = `<pre>${JSON.stringify(response, null, 2)}</pre>`;
         
-        // Mostrar en consola
-        console.log("Respuesta del servidor:", response);
-        console.log("Estado:", response.status);
-        console.log("Datos recibidos por el servidor:", response.receivedData);
+        // Display in console
+        console.log("Server response:", response);
+        console.log("Status:", response.status);
+        console.log("Data received by server:", response.receivedData);
         
     } catch (error) {
-        outputDiv.textContent = "Error al enviar datos: " + error.message;
-        console.error("Error al enviar datos:", error);
+        outputDiv.textContent = "Error sending data: " + error.message;
+        console.error("Error sending data:", error);
     }
 });
 
-// Mensaje inicial en consola
-console.log("Aplicación iniciada. Puedes:");
-console.log("1. Hacer clic en 'Obtener Datos' para recibir información con retardo");
-console.log("2. Hacer clic en 'Enviar Datos' para enviar información con retardo");
+// Initial console message
+console.log("Application started. You can:");
+console.log("1. Click 'Fetch Data' to receive information with delay");
+console.log("2. Click 'Send Data' to send information with delay");
